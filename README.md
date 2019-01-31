@@ -1,29 +1,31 @@
-# vue_mix
+# Vue Mix
 
-## Project setup
-```
+## Motivation
+It's a Vue.js practice project based on my React Mix repository, to explore Vue's features, syntax and its router.
+
+## Project status
+In progress. The implementation of the router and of the Random Quote Machine are complete.
+
+## How to use
+You can navigate the app by clicking on the nav links in the top right corner.
+
+## Practiced features
+- Vue Cli setup
+- Vue syntax, features
+- Component composition
+- Routing with vue-router
+
+## Setup
 yarn install
-```
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+## How to run
+yarn serve
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+## Screenshots
 
-### Run your tests
-```
-yarn run test
-```
+![alt text](./screenshots/quotes.jpeg?raw=true)
 
-### Lints and fixes files
-```
-yarn run lint
-```
+## Known issues
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Future features
+- Additional apps (notes, pomodoro...)
