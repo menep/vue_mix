@@ -1,15 +1,14 @@
 <template>
   <footer class="footer">
-    <p class="footer__note">Quotes by
-      <a href="https://quotesondesign.com/">Quotes on Design</a>
-    </p>
+    <p class="footer__note" v-html="footerNote"></p>
     <a class="footer__link" href="https://github.com/menep/">See on GitHub</a>
   </footer>
 </template>
 
 <script>
 export default {
-  name: "app-footer"
+  name: "app-footer",
+  props: ["footerNote"]
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1 class="header__heading">Vue Mix</h1>
+    <h1 class="header__heading"><router-link to="/">Vue Mix</router-link></h1>
     <nav class="header__nav">
       <ul class="header__linkList">
         <li class="header__link"><router-link to="/quotes">Quotes</router-link></li>

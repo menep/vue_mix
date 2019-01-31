@@ -8,9 +8,14 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/quotes',
-      name: 'quotes',
-      component: () => import('./components/Quotes/QuotesMain.vue')
+      path: "/",
+      name: "home",
+      component: () => import("./components/Home/Home.vue")
+    },
+    {
+      path: "/quotes",
+      name: "quotes",
+      component: () => import("./components/Quotes/QuotesMain.vue")
     }
   ]
 });

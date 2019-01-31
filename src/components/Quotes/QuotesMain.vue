@@ -1,10 +1,10 @@
 <template>
-  <main class="main">
-    <blockquote class="main__quote" v-html="quote"></blockquote>
-    <hr class="main__separator">
-    <cite class="main__author">{{ author }}</cite>
-    <button class="main__btn" @click="fetchQuote">&#x21bb;</button>
-  </main>
+  <section class="quotes">
+    <blockquote class="quotes__text" v-html="quote"></blockquote>
+    <hr class="quotes__separator">
+    <cite class="quotes__author" v-html="author"></cite>
+    <button class="quotes__btn" @click="fetchQuote">&#x21bb;</button>
+  </section>
 </template>
 
 <script>
@@ -13,7 +13,9 @@ export default {
   data() {
     return {
       quote: "",
-      author: ""
+      author: "",
+      footerNote:
+        'Quotes by <a href="https://quotesondesign.com/">Quotes on Design</a>'
     };
   },
   methods: {
@@ -32,18 +34,19 @@ export default {
   },
   created() {
     this.fetchQuote();
+    this.$emit("upd", this.footerNote);
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.main {
+.quotes {
   min-width: 80%;
   max-width: 80%;
   margin: 0 auto;
   text-align: center;
 
-  &__quote {
+  &__text {
     font-size: 2rem;
     margin-bottom: 1rem;
   }

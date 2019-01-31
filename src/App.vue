@@ -1,8 +1,8 @@
 <template>
   <div class="app">
     <AppHeader></AppHeader>
-    <router-view></router-view>
-    <AppFooter></AppFooter>
+    <router-view @upd="updateMessage"></router-view>
+    <AppFooter :footerNote="message"></AppFooter>
   </div>
 </template>
 
@@ -10,9 +10,20 @@
 import AppHeader from "./views/AppHeader.vue";
 import AppFooter from "./views/AppFooter.vue";
 export default {
+  name: "app",
+  data() {
+    return {
+      message: "An app by Menep"
+    };
+  },
   components: {
     AppHeader,
     AppFooter
+  },
+  methods: {
+    updateMessage(e) {
+      this.message = e
+    }
   }
 };
 </script>
