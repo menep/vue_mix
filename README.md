@@ -1,4 +1,5 @@
 # Vue Mix
+![alt text](./screenshots/quotes.jpeg?raw=true)
 
 ## Motivation
 It's a Vue.js practice project based on my React Mix repository, to explore Vue's features, syntax and its router.
@@ -20,10 +21,6 @@ yarn install
 
 ## How to run
 yarn serve
-
-## Screenshots
-
-![alt text](./screenshots/quotes.jpeg?raw=true)
 
 ## Known issues
 
