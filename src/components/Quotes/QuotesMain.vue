@@ -1,0 +1,80 @@
+<template>
+  <main class="main">
+    <blockquote class="main__quote" v-html="quote"></blockquote>
+    <hr class="main__separator">
+    <cite class="main__author">{{ author }}</cite>
+    <button class="main__btn" @click="fetchQuote">&#x21bb;</button>
+  </main>
+</template>
+
+<script>
+export default {
+  name: "quotes-main",
+  data() {
+    return {
+      quote: "",
+      author: ""
+    };
+  },
+  methods: {
+    fetchQuote() {
+      fetch(
+        "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1",
+        { cache: "no-store" }
+      )
+        .then(response => response.json())
+        .then(resObject => {
+          const { content: quote, title: author } = resObject[0];
+          this.quote = quote;
+          this.author = author;
+        });
+    }
+  },
+  created() {
+    this.fetchQuote();
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.main {
+  min-width: 80%;
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+  &__quote {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__separator {
+    color: inherit;
+    max-width: 100%;
+  }
+
+  &__author {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 1rem;
+  }
+
+  &__btn {
+    color: #d2d2d2;
+    cursor: pointer;
+    margin-top: 2rem;
+    height: 4rem;
+    width: 8rem;
+    font-size: 2.5rem;
+    border: none;
+    background-color: var(--font-color-primary);
+  }
+
+  &__btn:active,
+  &__btn:hover {
+    background-color: #eee;
+  }
+}
+</style>
