@@ -16,6 +16,11 @@ export default new Router({
       path: "/quotes",
       name: "quotes",
       component: () => import("./components/Quotes/QuotesMain.vue")
+    },
+    {
+      path: "/notes",
+      name: "notes",
+      component: () => import("./components/Notes/NotesMain.vue")
     }
   ]
 });

@@ -53,7 +53,7 @@ export default {
 
   &__separator {
     color: inherit;
-    max-width: 100%;
+    width: 100%;
   }
 
   &__author {

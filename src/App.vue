@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <AppHeader></AppHeader>
-    <router-view @upd="updateMessage"></router-view>
+      <router-view @upd="updateMessage"></router-view>
     <AppFooter :footerNote="message"></AppFooter>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     updateMessage(e) {
-      this.message = e
+      this.message = e;
     }
   }
 };
@@ -48,6 +48,7 @@ html {
   --header-height: 5rem;
   --footer-height: 5rem;
   --font-color-primary: #132350;
+  --font-color-secondary: #ddd;
 }
 
 a {
